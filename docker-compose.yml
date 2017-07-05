@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  favolink:
+    image: favolink
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    ## set your startup file here
+    command: npm start
