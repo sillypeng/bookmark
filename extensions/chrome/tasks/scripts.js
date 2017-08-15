@@ -42,6 +42,7 @@ gulp.task('scripts', (cb) => {
         {
           test: /\.js$/,
           loader: 'babel-loader',
+          exclude: /node_modules/,
           enforce: 'post'
         }]
       }

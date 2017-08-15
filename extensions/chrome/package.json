@@ -19,8 +19,12 @@
     "babel-core": "^6.25.0",
     "babel-eslint": "7.x.x",
     "babel-loader": "7.x.x",
+    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
+    "babel-plugin-transform-es3-property-literals": "^6.22.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "1.x.x",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
     "chai": "4.x.x",
     "chromereload": "0.x.x",
     "debounce": "1.x.x",
@@ -52,12 +56,15 @@
     "yargs": "^8.x.x"
   },
   "dependencies": {
+    "autosuggest-highlight": "^3.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "crypto-js": "^3.1.9-1",
+    "material-ui": "^1.0.0-beta.3",
     "pouchdb": "^6.2.0",
     "react": "^15.6.1",
+    "react-autosuggest": "^9.3.2",
     "react-dom": "^15.6.1"
   }
 }

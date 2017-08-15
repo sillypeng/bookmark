@@ -6,7 +6,8 @@
       },
       "useBuiltIns": true,
       "debug": false
-    }]
+    }],
+    "stage-1"
   ],
   "plugins": ["transform-object-rest-spread", "transform-react-jsx"],
   "ignore": ["node_modules"]

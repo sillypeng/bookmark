@@ -3,7 +3,7 @@ import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
 import Chip from 'material-ui/Chip';
 
-export const Bookmark = ({bookmark}) => (
+const Favolink = ({bookmark}) => (
     <Paper elevation={4}>
         <Typography type="headline" component="h3">
             {bookmark.title}
@@ -11,3 +11,5 @@ export const Bookmark = ({bookmark}) => (
         {bookmark.tags.map(tag => <Chip key={tag} label={tag}/>)}
     </Paper>
 )
+
+export default Favolink
