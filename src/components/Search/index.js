@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import {SEARCH} from '../../ActionTypes'
+import {SEARCH} from '../ActionTypes'
 import Search from './Search'
 
 const onChange = searchText => ({

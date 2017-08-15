@@ -34,7 +34,7 @@ const shortcut = {
                 let element;
                 if (e.target) element = e.target;
                 else if (e.srcElement) element = e.srcElement;
-                if (element.nodeType == 3) element = element.parentNode;
+                if (element.nodeType === 3) element = element.parentNode;
 
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') return;
             }
@@ -45,8 +45,8 @@ const shortcut = {
             else if (e.which) code = e.which;
             let character = String.fromCharCode(code).toLowerCase();
 
-            if (code == 188) character = ","; //If the user presses , when the type is onkeydown
-            if (code == 190) character = "."; //If the user presses , when the type is onkeydown
+            if (code === 188) character = ","; //If the user presses , when the type is onkeydown
+            if (code === 190) character = "."; //If the user presses , when the type is onkeydown
 
             let keys = shortcut_combination.split("+");
             //Key Pressed - counts the number of valid keypresses - if it is same as the number of keys, the shortcut function is invoked
@@ -159,17 +159,17 @@ const shortcut = {
                     kp++;
                     modifiers.meta.wanted = true;
                 } else if (k.length > 1) { //If it is a special key
-                    if (special_keys[k] == code) kp++;
+                    if (special_keys[k] === code) kp++;
 
                 } else if (opt['keycode']) {
-                    if (opt['keycode'] == code) kp++;
+                    if (opt['keycode'] === code) kp++;
 
                 } else { //The special keys did not match
-                    if (character == k) kp++;
+                    if (character === k) kp++;
                     else {
                         if (shift_nums[character] && e.shiftKey) { //Stupid Shift key bug created by using lowercase
                             character = shift_nums[character];
-                            if (character == k) kp++;
+                            if (character === k) kp++;
                         }
                     }
                 }

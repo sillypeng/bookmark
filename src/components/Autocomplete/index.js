@@ -5,13 +5,13 @@ import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
-import { Menu, MenuItem } from 'material-ui/Menu';
+import { MenuItem } from 'material-ui/Menu';
 import match from 'autosuggest-highlight/match';
 import parse from 'autosuggest-highlight/parse';
-import { withStyles, createStyleSheet } from 'material-ui/styles';
+import { withStyles } from 'material-ui/styles';
 
 
-const styleSheet = createStyleSheet(theme => ({
+const styleSheet = theme => ({
     container: {
       flexGrow: 1,
       position: 'relative',
@@ -35,7 +35,7 @@ const styleSheet = createStyleSheet(theme => ({
     textField: {
       width: '100%',
     },
-  }));
+  });
 
 const renderInput = ({ classes, home, value, ref, ...other }) => (
     <TextField
@@ -53,8 +53,8 @@ const renderInput = ({ classes, home, value, ref, ...other }) => (
 )
 
 function renderSuggestion(suggestion, { query, isHighlighted }) {
-  const matches = match(suggestion.label, query);
-  const parts = parse(suggestion.label, matches);
+  const matches = match(suggestion, query);
+  const parts = parse(suggestion, matches);
 
   return (
     <MenuItem selected={isHighlighted} component="div">
@@ -94,7 +94,7 @@ class IntegrationAutosuggest extends Component {
       ? []
       : this.props.suggestions.filter(suggestion => {
           const keep =
-            count < 5 && suggestion.label.toLowerCase().slice(0, inputLength) === inputValue;
+            count < 5 && suggestion.toLowerCase().slice(0, inputLength) === inputValue;
   
           if (keep) {
             count += 1;
@@ -106,7 +106,7 @@ class IntegrationAutosuggest extends Component {
 
   handleSuggestionsFetchRequested = ({ value }) => {
     this.setState({
-      suggestions: getSuggestions(value),
+      suggestions: this.getSuggestions(value),
     });
   };
 
@@ -138,12 +138,11 @@ class IntegrationAutosuggest extends Component {
         onSuggestionsFetchRequested={this.handleSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.handleSuggestionsClearRequested}
         renderSuggestionsContainer={renderSuggestionsContainer}
-        getSuggestionValue={suggestion => suggestion.label}
         renderSuggestion={renderSuggestion}
         inputProps={{
           autoFocus: true,
           classes,
-          placeholder: 'Search a country (start with a)',
+          placeholder: 'new label',
           value: this.state.value,
           onChange: this.handleChange,
         }}

@@ -3,18 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "material-ui": "^1.0.0-beta.4",
+    "autosuggest-highlight": "^3.1.0",
+    "material-ui": "^1.0.0-beta.5",
     "pouchdb": "^6.2.0",
     "react": "^15.5.4",
+    "react-autosuggest": "^9.3.2",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
-    "react-router": "^4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "rxjs": "^5.4.2"
   },
   "devDependencies": {
-    "react-scripts": "1.0.11"
+    "react-scripts": "^1.0.11"
   },
   "scripts": {
     "start": "react-scripts start",
