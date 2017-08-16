@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Drawer from 'material-ui/Drawer'
-import Autocomplete from './Autocomplete'
 
 class App extends React.Component {
     constructor() {
@@ -25,7 +24,7 @@ const TopDrawer = ({isOpen, handleTopClose}) => {
           onRequestClose={handleTopClose}
           onClick={handleTopClose}
         >
-            <Autocomplete/>
+            helloworld
         </Drawer>
 }
 
